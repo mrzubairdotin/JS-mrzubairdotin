@@ -8,7 +8,7 @@ function myVar() {
 }
 myVar()
 console.log(x); // Output: 10
-console.log(y); // Error: y is not defined
+// console.log(y); // Error: y is not defined
 
 // ----- let --------
 /* let: Introduced in ECMAScript 6 (ES6), let allows block-scoping of variables. Variables declared with let are limited to the block (e.g., a loop or an if statement) in which they are declared. */
@@ -19,7 +19,7 @@ if (true) {
     console.log(b); // Output: 20
 }
 console.log(a); // Output: 10
-console.log(b); // Error: b is not defined
+// console.log(b); // Error: b is not defined
 
 // ------ const -------
 /* const: Also introduced in ES6, const is used to declare constants. Constants must be initialized during declaration and cannot be reassigned a new value. Like let, const is also block-scoped. */
@@ -30,7 +30,7 @@ if (true) {
     console.log(d); // Output: 20
 }
 console.log(c); // Output: 10
-console.log(d); // Error: d is not defined
+// console.log(d); // Error: d is not defined
 
 // --------- Variable Naming Rules in JS ---------
 // Start with a letter, underscore (_), or dollar sign ($): Variable names must begin with a letter, an underscore (_), or a dollar sign ($). They cannot start with a number or any other special character.
@@ -53,6 +53,14 @@ var firstName;
 // var my-Variable; // Hyphens are not allowed
 // var var; // Reserved keyword
 // var MyVariable; // Case mismatch
+
+
+let age = 21
+const name = 'Mr. Zubair'
+const email = 'mrzubair@github.com'
+
+console.table([age,name,email])
+
 
 
 

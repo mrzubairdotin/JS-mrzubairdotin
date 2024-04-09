@@ -40,3 +40,61 @@ for (let i = 0; i < 5; i++) {
 
 console.log(i); // Error: i is not defined
 
+// -------------------------------
+
+var c = 300;
+let a = 300;
+if (true) {
+    let a = 10;
+    const b = 20;
+    console.log("INNER: ", a);
+}
+
+console.log(a);        // Output: 300
+// console.log(b);    // Error: b is not defined
+console.log(c);        // Output: 300
+
+function one(){
+    const username = "hitesh";
+
+    function two(){
+        const website = "youtube";
+        console.log(username);
+    }
+    // console.log(website);   // Error: website is not defined
+    two();
+}
+
+one();
+
+if (true) {
+    const username = "Mr";
+    if (username === "Zubair") {
+        const website = " Instagram";
+        console.log(username + website);
+    }
+    // console.log(website);   // Error: website is not defined
+}
+
+// console.log(username);    // Error: username is not defined
+;
+
+
+// ------------- interesting ------------------ //
+
+
+console.log(addone(5))
+
+function addone(num){
+    return num + 1
+}
+
+
+
+addTwo(5)
+const addTwo = function(num){
+    return num + 2
+}
+
+
+
