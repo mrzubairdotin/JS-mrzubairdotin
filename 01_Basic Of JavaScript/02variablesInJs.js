@@ -61,7 +61,3 @@ const email = 'mrzubair@github.com'
 
 console.table([age,name,email])
 
-
-
-
-
