@@ -57,3 +57,4 @@ console.log(undefined == 0); // Output: false
 console.log(undefined > 0);  // Output: false
 console.log(undefined < 0);  // Output: false
 console.log("2" === 2);      // Output: false
+
