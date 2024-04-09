@@ -48,10 +48,6 @@ function greet(name) {
 // console.log(greeting); // Output: "Hello, Zubair!"
 
 
-
-
-
-
 "use strict"; // treat all JS code as newer version
 
 // alert( 3 + 3) // we are using nodejs, not browser
