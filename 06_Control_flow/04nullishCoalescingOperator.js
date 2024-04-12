@@ -12,3 +12,4 @@ value = 5 ?? 10 // Output: 5
 value = null ?? 10 // Output: 10
 value = undefined ?? 15 // Output: 15
 value = null ?? 10 ?? 20 // agar value bhaut sari hai to nul or unde. ko chodkar sabse pheli value ko lega Output: 10
+
