@@ -15,13 +15,17 @@ if (userEmail) {
 //truthy values
 // "0", 'false', " ", [], {}, function(){}
 
+console.log(false == 0); // Output : true
+console.log(false == ''); // Output : true
+console.log(0 == ''); // Output : true
 
-// const myArray = []
-// if (myArray.length === 0) {
-//     console.log("Array is empty");
-// } else{
-//     console.log("Array Lenth is not empty");
-// }
+
+const myArray = []
+if (myArray.length === 0) {
+    console.log("Array is empty");
+} else{
+    console.log("Array Lenth is not empty");
+}
 
 
 const myObj = { 
@@ -35,3 +39,5 @@ if (Object.keys(myObj).length === 0) { // (Object.keys(myObj) ese karne se objec
 }else{
     console.log("Object is not empty");
 }
+
+
