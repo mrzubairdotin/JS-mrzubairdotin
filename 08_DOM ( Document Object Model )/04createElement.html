@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const crDiv = document.createElement('div')
+    console.log(crDiv);
+crDiv.className = "mainDiv";
+crDiv.id = Math.round(Math.random() * 10 + 1)
+crDiv.setAttribute("title","This is div");
+crDiv.style.backgroundColor = 'red'
+crDiv.style.padding = "10px"
+// crDiv.innerText = "Coding" // Se value ko overide kar deta hai esme 2 round lagte hai
+const addText = document.createTextNode("mrzubiar.in") // ye value ko set karta hai 1 round me hi
+crDiv.appendChild(addText)
+document.body.appendChild(crDiv)
+
+</script>
+</html>
