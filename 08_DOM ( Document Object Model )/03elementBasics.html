@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Basic</title>
+</head>
+<body style="background-color: #313131; color: #fff;">
+    <div class="parent">
+        <!-- mrzubair.in  -->
+        <div class="day">MONDAY</div>
+        <div class="day">THUSDAY</div>
+        <div class="day">WEDNESDAY</div>
+        <div class="day">THURSDAY</div>
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(parent.children); // .children  lgane se uske aandar ki or value ko dega
+    // console.log(parent.children[0].innerHTML); // Output : MONDAY
+    
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    //     } // Ye parent ki all value per loop lga sakte hai
+
+    parent.children[0].style.color = "red"
+
+    // console.log(parent.firstElementChild); // output : <div>MONDAY</div>
+    // console.log(parent.lastElementChild); //<div>THURSDAY</div>
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling); // eska matlab uska ka bhai aaye ga ye dayOne yani monday hai uska sibling hua THUSDAY
+
+    console.log("NODES: ",parent.childNodes); // Esse ham sare nodes dhak sakte hai
+
+</script>
