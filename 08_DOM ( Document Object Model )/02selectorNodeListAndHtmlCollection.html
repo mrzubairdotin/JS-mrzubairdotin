@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector NodeList and HTMLCollection</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="father">
+<h1 class="heading" id="title">Basics of Dom <span style="display: none;">mrzubair.in</span> </h1>
+<p>This is a paragrap</p>
+</div>
+
+<h2>I am zubair</h2>
+<h2>I am from india</h2>
+<h2>i am a bca 2nd year student</h2>
+<h2>I like cricket</h2>
+
+<input type="password" name="" id="">
+
+<ul>
+    <li class="myList">ONE</li>
+    <li class="myList">TWO</li>
+    <li class="myList">THREE</li>
+</ul>
+
+</body>
+</html>
+<script>
+ 
+// document.getElementById('title') // agar hme direct hi chrome ke console me dhekna ho to esshe dhika dega
+// console.log(document.getElementById('title')); // agar hme node se dhakna ho to console ke aandar likna pdega
+// console.log(document.getElementById('title').className); // ye uska class name bhi bta dega
+// console.log(document.getElementById('title').id); // Or id 
+
+// console.log(document.getElementById('title').attributes); // ye sare attribute show kardega
+// console.log(document.getElementById('title').getAttribute('class')) // attributes se bhi class ka pta lga sakt hai or id ka bhi or attribute me className nhi sirf class dhalta hai
+// console.log(document.getElementById('title').getAttribute('id'))
+
+// document.getElementById('title').setAttribute('class','newClass') // ye setAttr. se ham class name bhi overide ya name de sakte hai ye 1st me hme attruibe dalna hoga (yani class,id) 2nd me uska jo naam rkna ho
+
+const newTitle = document.getElementById('title')
+// console.log(newTitle);
+newTitle.style.backgroundColor = 'red'
+newTitle.style.padding = '15px'
+newTitle.style.borderRadius = '10px'
+// console.log(newTitle); // add all adding attitbue
+
+// console.log(newTitle.textContent) // ye hidden content bhi show kar deta hai Output : Basics of Dom mrzubair.in  
+// console.log(newTitle.innerHTML) // ye html tag ke rup me data deta hai Output :Basics of Dom <span style="display: none;">mrzubair.in</span> 
+// console.log(newTitle.innerText) // ye jo display per data show hota hai usse hi show karta hai Output : Basics of Dom
+
+// console.log(document.getElementsByClassName('heading')); // ye ham class name se bhi kar sakte hai
+
+// console.log(document.querySelector('#title')) // ye jaise ham css me elment per desing karnte hai elemt ki id class name or tag name se same esshe hi kaam karta hai ye
+// console.log(document.querySelector('input[type="password"]')); // agar attibutes per bhi select karna ho to
+
+const myul = document.querySelector('ul');
+const myItem = myul.querySelector('li');
+myItem.style.backgroundColor = 'green'
+myItem.style.padding = "10px"
+myItem.innerText = "Coding"
+
+const ulList = document.querySelectorAll('li');
+// console.log(ulList); // ye hme node list deta hai or nodelist puri rup se array nhi hota hai per khcuh property array ki trh hoti hai
+// ulList.style.color = 'blue' // eror ye code kaam nhi krega qki ye nodeList esme btana padta hai konse node per kya karna hai
+ulList[1].style.color = 'blue' // ye shi hai ye kaam krega
+
+const myh2 = document.querySelectorAll('h2');
+// console.log(myh2);
+myh2.forEach( function(l) {
+    l.style.color = 'yellow'
+} )
+
+const myLii = document.getElementsByClassName('myList')
+// console.log(myLii); // abhi ye html collection hai
+const myConvertLi = Array.from(myLii) 
+console.log(myConvertLi); // ab html collection array me convert ho gya hai
+
+
+</script>
