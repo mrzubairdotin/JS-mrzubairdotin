@@ -1,0 +1,43 @@
+html {
+  margin: 0;
+}
+
+span {
+  display: block;
+  
+}
+.canvas {
+  margin: 50px auto 50px;
+  width: 80%;
+  text-align: center;
+  
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: inline-block;
+
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#one{
+  background: #2A9D8F;
+}
+
+#two{
+  background: #E9C46A;
+}
+#three{
+  background: #F4A261;
+}
+#red{
+  background: red;
+}
