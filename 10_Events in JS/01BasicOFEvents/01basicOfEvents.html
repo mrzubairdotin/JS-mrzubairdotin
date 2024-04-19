@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="allImages">
+            <li><img width="200px" height="200px" id="one" src="one.jpg" alt="photoshop"></li>
+            <li><img width="200px" height="200px" id="two" src="Two.jpg" alt=""></li>
+            <li><img width="200px" height="200px" id="three" src="Three.jpg" alt=""></li> <!-- alt ke bhad ya end me ham esha bhi click karne per alert mesg dikha sakte hai onclick="alert('Flowoer')" -->
+            <li><img width="200px" height="200px" id="four" src="Four.jpg" alt="" ></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+    // [ document.getElementById('one').onclick = function(){
+    //     alert("one clicked")
+    // } ] // ye hme sare information nhi deta esliye eska bhat kaam use karte hai ye feature bhi kaam deta hai per kaam karta hai  
+
+
+     //[ attachEvent() // attachEvnet se purane time per code me same work karta tha just for knowledge
+    // jQuery - on // JQuery on bhi same hi work karta ta purne time per ye bhi react ki trh phele bhat famoush tha ]
+
+
+    // [ type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode // En sab event ke bare me internet se search karke pde ]
+
+
+    // [ document.getElementById('two').addEventListener('click' ,function(event){
+    //     //    console.log(event); // Esse conslole karne se hme hme sare evnet mil jayenge jo lag sakte hai 
+    //        alert("You click two")
+    // },false) ] // ye bhi same kaam karta hai ye jo last me false hai eshe likho mt likho ye by by deafault false hi hota hai or ki bhar hme true bhi dena pad sakta hai or false bhi dena pad sakta hai uska bina kaam nhi chalta
+    
+
+
+    //  [ document.getElementById('allImages').addEventListener('click',function(e){
+    //     console.log("User Click All Image");
+    // },false)
+
+    // document.getElementById('three').addEventListener('click',function(e){
+    //     console.log("User Click Three");
+    //     // e.stopPropagation();
+    // },false)
+
+    // true or false and stopPropagation kassi kaam karta hai      
+    // FALSE : agar ham en dono ki value false rhene de tho agar ham three wale per click karte hai tho phele 1. User Click Three than or fir User Click All Image per sikaye ga qki ye bubles ke rup me kaam karta hai kis per click kiye hai usse phele or fir jis ke aandar wo hai yani perent ko dhikayega or eshe ham event Propagation bhi khate hai jo niche se uper jata hai ya inside to outside 
+    // TRUE : ehse ham capturing bhi bolte hai capturing top se bottom per kaam karta hai phele ye User Click All Image than fir User Click Three per dhikyega 
+    // e.stopPropagation(); karne se ye sirf uhse hi show krega ye bules ko stop kar deta hai or capturing ko bhi ]
+
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); // eshe ham eska jo google ka ling uska defalt bhavir ko change kar sakte hai jaise ham jab google ke ling per click karte hai to hme google ki website phucata hai ushe rok deta hai 
+    //     e.stopPropagation();
+    //     console.log("You click google")
+    // },false)
+
+        document.querySelector('#allImages').addEventListener('click',function(e){
+        // console.log("YOU CLICK IMAGES"); // ab all image tag ke aandar kitne bhi element hai us per click karne per ye console ka msg show krega 
+        // console.log(e.target); // ab all image tag ke aandar jis phi photo per click krege tho uska target yani image tag ko dhikayeka
+        // console.log(e.target.parentNode); // ab hme target yani image tag ka perent dkikayega yani li tag kiqi image li ke aandar hi to hai
+
+        let removekarna = e.target.parentNode;
+        //  removekarna.remove() // bilkul simple trike se bhi remove ho jayega
+        //   removekarna.parentNode.removeChild(removekarna); // ye trika thoda consuing hai per ye bhi use hota hai or ehse bhi kaam kar sakte hai
+        // NOTE : en uper walo me dono me ek problum ha ki agar ham image per click na karke ul per click karte hai to pura li dilet ho jayegi q ki ul ke aandar uska child tho li hi hai tho sare detlt kardega
+
+        // console.log(e.target.tagName) // tagName se ham jis elemet per ya jis jga per click krege uksa tag name jan sakte hai 
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id); // ye jab element delet hoga uski id console me show krega
+            removekarna.remove() // ab ye sirf jiska tag name 'IMG' hoga sirf ushe hi delet krega qki hmne condiiton lga di hai
+        }
+        
+        })
+
+
+    
+</script>
+</html>
