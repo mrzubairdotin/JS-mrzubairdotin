@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>Mr Zubair Khan</h1>
+    <button id="stop" style="background-color: red; color: white; border-radius: 5px; ">STOP</button>
+</body>
+<script>
+
+    // setTimeout(function(){
+    //  console.log("mrzubair.in");
+    // },2000) // ye funtion console me 2 sec. bhad naam ko print krayega
+
+    // const myName = function(){
+    //     console.log("My Name Is Zubair");
+    // }
+    // setTimeout(myName(),5000) // agar hme funtion ko time out me dhalna ho to hme sirf uska refernce dana hai esko refrence dena khate hai : setTimeout(myName,2000) ye jitna time doge utne time me print hoga  or esho excute krana khate hai : setTimeout(myName(),2000) ye direct hi console me print hoga bina
+
+    const changeText = function(){
+        document.querySelector('h1').
+        innerHTML = "mrzubair.in" // // yhe per uper wali line me ek . hai jo ki hm enter karke bhi dusri line ke aandar likh sakte hai 
+    }
+    const stopChange = setTimeout(changeText,3000)
+
+    // clearTimeout(stopChange) // eske aandar bhi sirf refrence dena hota hai or ye timeout nhi hone deta uske clear kar deta hai ab ese karne hai text nhi change hoga
+    
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(stopChange)
+        console.log("STOOPED")
+    })
+
+
+
+</script>
+</html>
