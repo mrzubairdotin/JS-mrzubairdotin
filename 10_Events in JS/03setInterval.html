@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+    <h1>Mr Zubair Khan</h1>
+    <button id="start" style="background-color: red; color: white; border-radius: 5px; ">START</button>
+    <button id="stop" style="background-color: red; color: white; border-radius: 5px; ">STOP</button>
+
+
+</body>
+<script>
+ 
+    //   setInterval(function(){
+    //     // console.log("mrzubair.in",Date.now());
+    //   },2000) // ye lgatar har 2 sec. me name ko console me print karta rhega
+
+    // const myName = function(addText){
+    //     console.log(addText,"Zubair")
+    // }
+    // const stopInterval = setInterval(myName,2000,"Hii") // Eske aandar ham 3rd parameter bhi pass kar sakte hai jo mene hii diya hai
+    // clearInterval(stopInterval) // ab ye interval ko stop kar dega 
+
+    let intervalID; // Variable to store the interval ID
+
+      const myWebName = function() {
+      console.log("mrzubair.in");
+       }
+
+      document.querySelector('#start').addEventListener('click', function() {
+       intervalID = setInterval(myWebName, 1000); // Store the interval ID
+       });
+
+       document.querySelector('#stop').addEventListener('click', function() {
+        clearInterval(intervalID); // Use the stored interval ID to clear the interval
+        });
+
+
+
+</script>
+</html>
