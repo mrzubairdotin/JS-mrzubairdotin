@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body>
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete. -->
+</body>
+<script>
+    // Some API for check 1. randomuser.me (https://randomuser.me/) 2.api.github.com (https://api.github.com/users/mrzubairdotin)
+    // API ka data smjne ke liye hm [ json formater ] webstie ka use karte hai jo api se hmare pass data aata hai wo json ke roop me hota hai ushe hm simple tree ke roop me smj sakte hai usse ham or text and alag alag triko se smj sakte hai
+
+    
+    const requestUrl = 'https://api.github.com/users/mrzubairdotin'; // Store the URL in a variable
+    const xhr = new XMLHttpRequest(); // Creating a new XMLHttpRequest object
+    xhr.open('GET', requestUrl); // Preparing a GET request to the 'requestUrl' web address 'xhr.open('GET', requestUrl)' उपयोग करके, हमने एक GET अनुरोध को बनाया है और उसे 'requestUrl' वेब पते पर भेजने के लिए तैयार किया है। 
+    xhr.onreadystatechange = function(){ // Event handler for when the state of the request changes फिर, 'xhr.onreadystatechange' घटना हैंडलर को सेट किया गया है, जिसका कार्य है बताना कि अनुरोध का स्थिति क्या है।
+        console.log(xhr.readyState); // Log the ready state of the request
+        if (xhr.readyState === 4) { // Check if the ready state is 4 (request completed)
+            const data = JSON.parse(this.responseText); // Parse the received data as JSON
+            console.log(typeof data); // Log the type of data received
+            console.log(data.following); // Log the 'following' property of the data
+        }
+    };
+    xhr.send(); // Sending the request 'xhr.send()' का उपयोग करके, हम अंत में अपने अनुरोध को सर्वर को भेज देते हैं।
+
+</script>
+</html>
