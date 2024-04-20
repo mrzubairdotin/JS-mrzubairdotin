@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Info Card</title>
+    <style>
+.card {
+  width: 300px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+#name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#followers {
+  font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img id="avatar" src="" alt="Avatar">  <!-- alt="Avatar": Ye attribute image ke liye alternative text provide karta hai. Agar image load nahi ho pata hai ya phir screen reader ka istemal ho raha hai, to ye text image ke jagah display hota hai. -->
+        <div id="name"></div>
+        <div id="followers"></div>
+      </div>      
+</body>
+<script>
+      const requestUrl = 'https://api.github.com/users/mrzubairdotin';
+
+      fetch(requestUrl)
+      .then(response => response.json())
+      .then(data => {
+      document.getElementById('avatar').src = data.avatar_url;
+      document.getElementById('name').textContent = data.name;
+      document.getElementById('followers').textContent = `Followers: ${data.followers}`;
+     })
+     .catch(error => console.error('Error fetching data:', error));
+
+
+</script>
+</html>
