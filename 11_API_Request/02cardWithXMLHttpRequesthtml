@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card With API</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/mrzubairdotin';
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data.followers);
+
+        // Create card elements
+        const card = document.createElement('div');
+        card.style.width = '300px';
+        card.style.padding = '20px';
+        card.style.backgroundColor = '#f0f0f0';
+        card.style.borderRadius = '10px';
+        card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+        card.style.textAlign = 'center';
+        card.style.margin = 'auto'; // Center the card on the screen
+
+        const avatar = document.createElement('img');
+        avatar.src = data.avatar_url;
+        avatar.style.width = '100px';
+        avatar.style.height = '100px';
+        avatar.style.borderRadius = '50%';
+        avatar.style.marginBottom = '20px';
+
+        const name = document.createElement('div');
+        name.textContent = data.name;
+        name.style.fontSize = '20px';
+        name.style.fontWeight = 'bold';
+        name.style.marginBottom = '10px';
+
+        const followers = document.createElement('div');
+        followers.textContent = `Followers: ${data.followers}`;
+        followers.style.fontSize = '16px';
+
+        // Append elements to card
+        card.appendChild(avatar);
+        card.appendChild(name);
+        card.appendChild(followers);
+
+        // Append card to the body
+        document.body.appendChild(card);
+    }
+};
+xhr.send();
+
+</script>
+</html>
