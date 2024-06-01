@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+        <script>
+
+ function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+    // makeFunc नाम का एक फंक्शन है जिसमें एक वेरिएबल name है जिसका मान "Mozilla" है।
+// इसके अंदर एक और फंक्शन displayName है जो name को कंसोल में प्रिंट करता है।
+// makeFunc फंक्शन displayName फंक्शन को रिटर्न करता है।
+// जब myFunc को कॉल किया जाता है, यह displayName फंक्शन को execute करता है और "Mozilla" प्रिंट होता है। यह closure का उदाहरण है, जहाँ displayName को name याद रहता है।
+
+// Real life example 
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+        /* 
+clickHandler नाम का एक फंक्शन है जो एक color पैरामीटर लेता है।
+यह फंक्शन एक नया फंक्शन रिटर्न करता है जो document.body.style.backgroundColor को color के अनुसार सेट करता है।
+document.getElementById('orange').onclick और document.getElementById('green').onclick बटन के क्लिक इवेंट्स को सेट करते हैं।
+जब "Orange" बटन क्लिक किया जाता है, तो बैकग्राउंड कलर orange हो जाता है और जब "Green" बटन क्लिक किया जाता है, तो बैकग्राउंड कलर green हो जाता है।
+यह भी closure का एक उदाहरण है, क्योंकि इनलाइन फंक्शन्स color को "याद" रखते हैं।
+        */
+
+    </script>
+    <script>
+// What is a Closure?
+// A closure is a feature in JavaScript (and many other programming languages) that allows a function to remember and access its lexical scope even when the function is executed outside that scope.
+// In simpler terms, when a function is defined inside another function and that inner function is used outside the outer function, the inner function retains access to the variables and scope of the outer function. This ability of the inner function to remember and access the outer function's variables is called a closure.
+
+
+// Closure क्या है?
+// Closure एक ऐसा फीचर है जो आपको एक फंक्शन को उसके आस-पास के स्कोप के साथ "याद" करने की सुविधा देता है। जब एक फंक्शन को किसी दूसरे फंक्शन के अंदर डिफाइन किया जाता है, और वह फंक्शन बाहर भी उपयोग किया जाता है, तो यह फंक्शन अपने बाहर वाले फंक्शन के वेरिएबल्स को "याद" रख सकता है। इसे ही closure कहते हैं
+
+
+    </script>
+</html>
